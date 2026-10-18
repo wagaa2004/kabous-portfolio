@@ -1,51 +1,55 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kabous | Cyber Security</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cairo:wght@600;800&display=swap" rel="stylesheet">
+<title>KABOUS // CYBER SECURITY ARCHITECT</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--neon:#00ff41;--bg:#020a02}*{margin:0;padding:0;box-sizing:border-box}
-body{background:#020a02;color:#fff;font-family:'Cairo',sans-serif;overflow-x:hidden}
-canvas#matrix{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:.15}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center}
-.glitch{font-family:'Share Tech Mono';font-size:72px;font-weight:900;color:#00ff41;text-shadow:0 0 10px #00ff41,0 0 30px #00ff41;position:relative;letter-spacing:3px}
-.ar-name{font-size:42px;margin-top:10px;text-shadow:0 0 15px #00ff41;font-weight:800}
-.subtitle{margin-top:25px;font-family:'Share Tech Mono';font-size:16px;color:#00cc33;line-height:1.8}
-.badge{margin-top:25px;border:1px solid #00ff41;padding:8px 20px;color:#00ff41;box-shadow:0 0 15px rgba(0,255,65,.3)}
-.section{max-width:900px;width:92%;margin:40px auto;padding:25px;border:1px solid rgba(0,255,65,.25);background:rgba(10,26,10,.9);border-radius:8px}
-.sec-title{font-family:'Share Tech Mono';color:#00ff41;font-size:20px;margin-bottom:20px}
-.skills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.skill{border:1px solid #00ff41;padding:8px 14px;font-family:'Share Tech Mono';font-size:14px;color:#00ff41;background:rgba(0,255,65,.05)}
-.skill:hover{background:#00ff41;color:#000;box-shadow:0 0 20px #00ff41}
-.proj{display:flex;justify-content:space-between;padding:12px 15px;background:rgba(0,0,0,.4);border-left:3px solid #00ff41;font-family:'Share Tech Mono';margin-bottom:10px}
-.btns{display:flex;flex-direction:column;gap:12px;align-items:center;margin-top:20px}
-.btn{width:100%;max-width:320px;padding:14px;border:1px solid #00ff41;color:#00ff41;font-family:'Share Tech Mono';text-decoration:none;text-align:center}
-.btn:hover{background:#00ff41;color:#000;box-shadow:0 0 30px #00ff41}
-@media(max-width:600px){.glitch{font-size:48px}.ar-name{font-size:32px}}
-</style></head><body>
-<canvas id="matrix"></canvas>
-<div class="hero"><div class="glitch">Kabous</div><div class="ar-name">إسلام كابوس</div>
-<div class="subtitle">CYBER SECURITY SPECIALIST • PENETRATION TESTER<br>المنيا - بني مزار - الشيخ فضل | 01101145178</div>
-<div class="badge">● SYSTEM ONLINE • READY FOR HACKING</div></div>
-<div class="section"><div class="sec-title">Skills [12]</div><div class="skills">
-<div class="skill">Linux/Termux 95%</div><div class="skill">Python 90%</div><div class="skill">JavaScript 85%</div><div class="skill">Cyber Security 80%</div><div class="skill">PenTesting 70%</div><div class="skill">HTML/CSS 90%</div><div class="skill">Crypto 75%</div><div class="skill">SQL 75%</div><div class="skill">Git 85%</div><div class="skill">API 85%</div><div class="skill">Bash 80%</div><div class="skill">Networking 70%</div>
-</div></div>
-<div class="section"><div class="sec-title">Projects [6]</div>
-<div class="proj"><span>Kabous Hacker Interface V2</span><span>-1</span></div>
-<div class="proj"><span>BTC Tracker Bot</span><span>-2</span></div>
-<div class="proj"><span>Vuln Scanner</span><span>-3</span></div>
-<div class="proj"><span>Binary Portfolio (هذا الموقع)</span><span>-4</span></div>
-<div class="proj"><span>FB Auto Tools</span><span>-5</span></div>
-<div class="proj"><span>Termux Setup Script</span><span>-6</span></div>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;color:#e1e1e6;font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
+#canvas{position:fixed;inset:0;z-index:0;opacity:.08}
+.wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:20px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid #242436;font-family:'JetBrains Mono'}
+.nav .logo{color:#00ff88;font-weight:700;letter-spacing:2px}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;padding:80px 0 40px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.big{font-size:84px;line-height:.9;font-weight:700;letter-spacing:-3px}.big span{color:#00ff88}
+@media(max-width:600px){.big{font-size:48px}}
+.sub{margin-top:20px;color:#8b8ba7;font-size:18px;line-height:1.6;max-width:500px}
+.tag{font-family:'JetBrains Mono';font-size:11px;padding:6px 12px;border:1px solid #242436;background:#15151f;border-radius:20px;color:#8b8ba7;display:inline-block;margin:3px}
+.tag.green{border-color:#00ff88;color:#00ff88}
+.terminal{background:#15151f;border:1px solid #242436;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.term-head{background:#1e1e2e;padding:12px 16px;display:flex;gap:8px}.dot{width:12px;height:12px;border-radius:50%}.dot.r{background:#ff5f56}.dot.y{background:#ffbd2e}.dot.g{background:#27c93f}
+.term-body{padding:20px;font-family:'JetBrains Mono';font-size:13px;line-height:1.8;color:#8b8ba7}
+.card{background:#15151f;border:1px solid #242436;border-radius:16px;padding:28px}
+.proj{background:#15151f;border:1px solid #242436;border-radius:12px;padding:22px;display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.btn{display:inline-block;margin-top:25px;padding:16px 32px;background:#00ff88;color:#000;font-family:'JetBrains Mono';font-weight:700;text-decoration:none;border-radius:8px}
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div class="wrap">
+<div class="nav"><div class="logo">KABOUS.DEV</div><div>MINYA • EGYPT • AVAILABLE</div></div>
+<div class="hero">
+<div>
+<div class="big">Islam<br><span>Kabous</span></div>
+<div class="sub">Cyber Security Specialist & Penetration Tester. Building secure tools, breaking insecure ones.</div>
+<div style="margin-top:20px"><span class="tag green">● OPEN TO WORK</span><span class="tag">PenTest</span><span class="tag">Python</span><span class="tag">Linux</span></div>
 </div>
-<div class="section"><div class="sec-title">Contact</div><div class="btns">
-<a class="btn" href="https://wa.me/201101145178" target="_blank">WhatsApp 01101145178</a>
-<a class="btn" href="https://www.facebook.com/" target="_blank">Facebook</a>
+<div class="terminal"><div class="term-head"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><div class="term-body">
+$ whoami<br>Islam Kabous - Cyber Security Architect<br><br>$ cat location.txt<br>Minya, Beni Mazar, Sheikh Fadl<br><br>$ ls skills/<br>Linux 95% | Python 90% | CyberSec 80%<br><br>$ ./contact.sh<br>📱 01101145178
 </div></div>
+</div>
+<div style="margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px"><div class="card"><h3 style="color:#00ff88;font-family:'JetBrains Mono';font-size:12px">EXPERIENCE</h3><div style="font-size:36px;font-weight:700">5+ Years</div><p style="color:#8b8ba7;font-size:14px">In Cyber Security, Termux & Linux</p></div><div class="card"><h3 style="color:#00ff88;font-family:'JetBrains Mono';font-size:12px">PROJECTS</h3><div style="font-size:36px;font-weight:700">27 Built</div><p style="color:#8b8ba7;font-size:14px">BTC Tracker, Vuln Scanner, FB Tools</p></div><div class="card"><h3 style="color:#00ff88;font-family:'JetBrains Mono';font-size:12px">FOCUS</h3><div style="font-size:36px;font-weight:700">OffSec</div><p style="color:#8b8ba7;font-size:14px">PenTesting & Python Automation</p></div></div>
+<div style="margin-top:60px"><div style="font-family:'JetBrains Mono';color:#00ff88;letter-spacing:3px;margin-bottom:20px">// SELECTED WORK</div>
+<div class="proj"><div><b>01 - Kabous Hacker OS V2</b><br><small style="color:#8b8ba7">Full hacker desktop in browser</small></div><small>HTML • JS</small></div>
+<div class="proj"><div><b>02 - BTC Tracker Bot</b><br><small style="color:#8b8ba7">Real-time Bitcoin tracking</small></div><small>Python • API</small></div>
+<div class="proj"><div><b>03 - Vuln Scanner</b><br><small style="color:#8b8ba7">Automated scanner SQLi, XSS</small></div><small>Security</small></div>
+</div>
+<div style="text-align:center;margin-top:60px;padding:60px 20px;border:1px dashed #242436;border-radius:20px"><h2 style="font-size:42px">Let's build something <span style="color:#00ff88">secure</span>.</h2><a class="btn" href="https://wa.me/201101145178">WHATSAPP 01101145178 →</a></div>
+<div style="margin-top:60px;padding:20px 0;border-top:1px solid #242436;font-family:'JetBrains Mono';font-size:11px;color:#444;text-align:center">© 2026 KABOUS • BUILT ON TERMUX</div>
+</div>
 <script>
-const canvas=document.getElementById('matrix');const ctx=canvas.getContext('2d');
-canvas.width=innerWidth;canvas.height=innerHeight;
-const drops=Array(Math.floor(canvas.width/14)).fill(1);
-function draw(){ctx.fillStyle="rgba(2,10,2,0.05)";ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle="#00ff41";ctx.font="14px monospace";for(let i=0;i<drops.length;i++){ctx.fillText(Math.random()>0.5?"1":"0",i*14,drops[i]*14);if(drops[i]*14>canvas.height&&Math.random()>0.975)drops[i]=0;drops[i]++}}setInterval(draw,35);
-</script></body></html>
+const c=document.getElementById('canvas'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;let cols=Math.floor(c.width/18),drops=Array(cols).fill(0);function draw(){x.fillStyle='rgba(10,10,15,0.08)';x.fillRect(0,0,c.width,c.height);x.fillStyle='#00ff88';x.font='12px monospace';drops.forEach((y,i)=>{x.fillText(Math.random()>0.5?'1':'0',i*18,y*18);if(y*18>c.height&&Math.random()>0.975)drops[i]=0;drops[i]++})}setInterval(draw,50);
+</script>
+</body></html>
