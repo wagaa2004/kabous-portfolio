@@ -1,1 +1,156 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KABOUS</title><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#020a06;color:#a0ffb0;font-family:'Cairo',sans-serif;min-height:100vh}#bg{position:fixed;inset:0;z-index:0;opacity:0.12}.wrap{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:12px 14px 80px}.top-bar{display:flex;justify-content:space-between;border:1px solid rgba(0,255,100,0.2);padding:6px 10px;font-size:10px;color:rgba(0,255,100,0.5);font-family:'JetBrains Mono'}.fancy-name{font-family:'JetBrains Mono';font-size:44px;font-weight:900;color:#7aff9a;text-align:center;text-shadow:0 0 30px rgba(0,255,100,0.8);letter-spacing:2px;min-height:60px;display:flex;justify-content:center;flex-wrap:wrap;gap:4px;direction:ltr;margin:14px 0}.fancy-name .c{display:inline-block;min-width:0.6em}.fancy-name .c.bin{opacity:0.6;color:#00ff88}.fancy-name .c.real{color:#b0ffbb;text-shadow:0 0 20px #00ff88}.sub{font-size:11px;letter-spacing:2px;text-align:center;color:rgba(160,255,176,0.6);margin-bottom:18px;font-family:'JetBrains Mono';direction:ltr}.box{border:1px solid rgba(0,255,100,0.25);background:linear-gradient(180deg,rgba(0,255,100,0.06),rgba(0,20,10,0.6));padding:16px;position:relative;margin-bottom:14px}.box::before,.box::after{content:'';position:absolute;width:12px;height:12px;border-color:#00ff88;border-style:solid}.box::before{top:-1px;left:-1px;border-width:2px 0 0 2px}.box::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}.box-title{color:#7aff9a;font-size:14px;font-weight:700;margin-bottom:12px}.row{font-size:12px;margin:6px 0;color:rgba(200,255,210,0.7)}.row b{color:#eaffea}.dot{display:inline-block;width:8px;height:8px;background:#00ff88;border-radius:50%;box-shadow:0 0 8px #00ff88;margin-left:6px}.btn-wa{display:block;width:100%;text-align:center;margin-top:14px;padding:12px;background:#00ff88;color:#000;font-weight:900;text-decoration:none;border-radius:30px;box-shadow:0 0 20px rgba(0,255,100,0.4);font-family:'JetBrains Mono'}.footer{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-between;padding:7px 14px;font-size:9px;color:rgba(0,255,100,0.5);border-top:1px solid rgba(0,255,100,0.15);background:rgba(2,10,6,0.95);font-family:'JetBrains Mono'}</style></head><body><canvas id="bg"></canvas><div class="wrap"><div class="top-bar"><span>النظام: آمن</span><span>UTC <span id="utc"></span> • 2024.12.19</span><span>الإصدار | 3.1.0 مشفر</span></div><div id="fancy" class="fancy-name"></div><div class="sub">الأمن السيبراني • اختبار الاختراق • ملف الأعمال</div><div class="box"><div class="box-title">🛡️ بيانات الملف الشخصي</div><div class="row">دور:</div><div class="row"><span class="dot"></span><b>هاكر أخلاقي</b><div style="margin-right:14px;font-size:10px;opacity:0.6">على الإنترنت</div></div><div class="row" style="margin-top:10px">ركز:</div><div class="row"><span class="dot"></span><b>أمن الويب • مركز عمليات الأمن • تحليل التهديدات</b></div><div class="row" style="margin-top:10px">حالة:</div><div class="row"><span class="dot"></span><b>متاح للعمل الحر</b></div><a class="btn-wa" href="https://wa.me/201101145178">واتساب 01101145178</a></div><div class="box"><div class="box-title">> العمليات الحالية</div><div class="row">جاري المسح: النطاقات .. تم</div><div class="row">نشط جدار الحماية: <b style="color:#00ff88">نشط</b></div><div class="row">مستوى التهديد: منخفض • 0 حرج</div><div class="row" style="margin-top:8px">الموقع: المنيا، بني مزار</div><div class="row">< وقت التشغيل: خبرة تزيد عن 5 سنوات</div></div></div><div class="footer"><span>النظام: آمن</span><span id="utc2"></span><span>الإصدار | 3.1.0 مشفر</span></div><script>const c=document.getElementById('bg'),x=c.getContext('2d');function r(){c.width=innerWidth;c.height=innerHeight}r();addEventListener('resize',r);let cols=Math.floor(innerWidth/16),d=Array(cols).fill(0);function dw(){x.fillStyle='rgba(2,10,6,0.08)';x.fillRect(0,0,c.width,c.height);x.fillStyle='#00ff88';x.font='11px monospace';d.forEach((y,i)=>{x.fillText(Math.random()>0.5?'1':'0',i*16,y*16);if(y*16>c.height&&Math.random()>0.975)d[i]=0;d[i]++})}setInterval(dw,50);function makeBinary(el,text){el.innerHTML='';let arr=Array.from(text);arr.forEach((ch,idx)=>{if(ch===' '){let s=document.createElement('span');s.textContent=' ';s.style.width='0.5em';el.appendChild(s);return}let s=document.createElement('span');s.className='c bin';s.textContent=Math.random()>0.5?'1':'0';el.appendChild(s);let cnt=0,max=15+Math.random()*22;let iv=setInterval(()=>{if(cnt<max){s.textContent=Math.random()>0.5?'1':'0';cnt++}else{clearInterval(iv);s.textContent=ch;s.classList.remove('bin');s.classList.add('real');}},40+idx*42);});}makeBinary(document.getElementById('fancy'),"乇ᦓꪶꪖꪑ  ᘓɹɹɹɠ᎗ɹ̣Ȋܭ");setInterval(()=>{document.querySelectorAll('.c.real').forEach(s=>{if(Math.random()>0.9){let o=s.textContent;s.textContent=Math.random()>0.5?'1':'0';s.classList.remove('real');s.classList.add('bin');setTimeout(()=>{s.textContent=o;s.classList.remove('bin');s.classList.add('real');},200);}});},2800);function up(){let t=new Date().toUTCString().split(' ')[4];document.getElementById('utc').textContent=t;document.getElementById('utc2').textContent='UTC '+t}up();setInterval(up,1000);</script></body></html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>乇ᦓꪶꪖꪑ   ᘓɹɹɹɠ᎗ɹ̣Ȋܭ - KABOUS</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#020a06;color:#a0ffb0;font-family:'JetBrains Mono',monospace;overflow-x:hidden;min-height:100vh}
+#bg{position:fixed;inset:0;z-index:0}
+.wrap{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;padding:10px}
+.top-meta{display:flex;justify-content:space-between;font-size:9px;color:rgba(0,255,100,.4);padding:8px 15px;border:1px solid rgba(0,255,100,.15);letter-spacing:1px}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 0}
+.binary-title{font-size:11px;line-height:1.1;color:rgba(0,255,100,.7);letter-spacing:1px;text-align:center;white-space:pre;direction:ltr;font-weight:700;text-shadow:0 0 8px #00ff88}
+.fancy-name{font-size:42px;color:#b8ffb8;text-align:center;margin:18px 0 8px;letter-spacing:3px;text-shadow:0 0 30px #00ff88, 0 0 60px rgba(0,255,100,.5);font-family:'JetBrains Mono';direction:ltr;min-height:60px}
+.fancy-name span{display:inline-block;transition:all .15s}
+.fancy-name span.bin{color:rgba(0,255,100,.5)}
+.fancy-name span.real{color:#c8ffcc;text-shadow:0 0 15px #00ff88}
+.subtitle{font-size:11px;letter-spacing:4px;color:rgba(160,255,180,.6);direction:ltr;margin-bottom:25px}
+.content{display:grid;grid-template-columns:380px 1fr 380px;gap:18px;max-width:1400px;margin:0 auto;width:100%;align-items:start}
+.box{border:1px solid rgba(0,255,100,.25);background:linear-gradient(180deg,rgba(0,255,100,.05),rgba(2,20,10,.85));padding:16px 18px;position:relative;backdrop-filter:blur(4px)}
+.box::before,.box::after{content:'';position:absolute;width:14px;height:14px;border-color:#00ff88;border-style:solid}
+.box::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.box::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.box-head{color:#7aff9a;font-size:14px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.label{font-size:11px;color:rgba(180,255,190,.6);margin-top:10px}
+.value{font-size:12px;color:#eaffea;font-weight:700;margin:2px 0}
+.dot{width:7px;height:7px;background:#00ff88;border-radius:50%;display:inline-block;box-shadow:0 0 6px #00ff88;margin-left:6px}
+.service{border:1px solid rgba(0,255,100,.25);background:rgba(0,255,100,.06);padding:12px;display:flex;gap:12px;align-items:center;margin-bottom:12px;border-radius:4px}
+.tag{width:48px;height:48px;background:rgba(0,255,100,.15);border:1px solid rgba(0,255,100,.3);display:flex;align-items:center;justify-content:center;font-size:20px;border-radius:6px}
+.service h4{font-size:13px;color:#eaffea}
+.price{font-size:20px;font-weight:900;color:#7aff9a;text-shadow:0 0 10px #00ff88}
+.small{font-size:9px;color:rgba(180,255,190,.6);margin-top:2px}
+.skill-row{margin:10px 0}
+.skill-top{display:flex;justify-content:space-between;font-size:10px}
+.bar{height:3px;background:rgba(0,255,100,.15);margin-top:4px;position:relative}
+.bar-fill{height:100%;background:linear-gradient(90deg,#00ff88,#7aff9a);box-shadow:0 0 6px #00ff88}
+.contact-bar{margin:18px auto 0;border:1px solid rgba(0,255,100,.3);padding:10px 22px;border-radius:30px;background:rgba(0,255,100,.06);font-size:10px;letter-spacing:1px;color:rgba(180,255,190,.7);direction:ltr;text-align:center;max-width:600px}
+.footer{display:flex;justify-content:space-between;padding:8px 15px;font-size:9px;color:rgba(0,255,100,.35);border-top:1px solid rgba(0,255,100,.15);margin-top:10px}
+@media(max-width:1100px){.content{grid-template-columns:1fr;max-width:600px}.binary-title{font-size:7px}.fancy-name{font-size:28px}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="wrap">
+<div class="top-meta"><span>VERSION 3.1.0 | ENCRYPTED</span><span id="utc">UTC 00:00:00 • 2024.12.19</span><span>SYS: SECURE</span></div>
+
+<div class="hero">
+<div class="binary-title" id="binTitle"></div>
+<div class="fancy-name" id="fancy"></div>
+<div class="subtitle">CYBERSECURITY • PENETRATION TESTING • PORTFOLIO</div>
+</div>
+
+<div class="content">
+<div>
+<div class="box">
+<div class="box-head">🛡️ PROFILE DATA</div>
+<div class="label">ROLE:</div>
+<div class="value"><span class="dot"></span>ETHICAL HACKER<br><span style="font-size:10px;opacity:.6">ONLINE</span></div>
+<div class="label">FOCUS:</div>
+<div class="value"><span class="dot"></span>WEB SECURITY • SOC • THREAT ANALYSIS</div>
+<div class="label">STATUS:</div>
+<div class="value"><span class="dot"></span>AVAILABLE FOR FREELANCE</div>
+</div>
+<div class="box" style="margin-top:18px">
+<div class="box-head">> CURRENT OPERATIONS</div>
+<div class="value" style="font-size:11px;line-height:1.8">> Scanning: domains ... OK<br>> Firewall: <span style="color:#00ff88">ACTIVE</span><br>> Threat Level: LOW • 0 CRITICAL</div>
+</div>
+</div>
+
+<div style="display:flex;align-items:center;justify-content:center;color:rgba(0,255,100,.25);font-size:14px;line-height:1.4;direction:ltr;text-align:center;white-space:pre">0
+1
+1
+0
+1
+0
+1
+1
+0
+1
+1
+0
+1</div>
+
+<div>
+<div class="box">
+<div class="box-head">SERVICES & PRICING</div>
+<div class="service">
+<div class="tag">🏷️</div>
+<div><h4>SECURITY AUDIT</h4><div class="price">150 EGP</div><div class="small">Vulnerability Scan • Report • Recommendations</div></div>
+</div>
+<div class="service">
+<div class="tag">🏷️</div>
+<div><h4>FULL PENTEST PACKAGE</h4><div class="price">350 EGP</div><div class="small">Web App • Network • Detailed Report</div></div>
+</div>
+</div>
+<div class="box" style="margin-top:18px">
+<div class="box-head">SKILLS</div>
+<div class="skill-row"><div class="skill-top"><span>PENETRATION TESTING [■■■■■]</span><span>85%</span></div><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>SECURITY AUDIT [■■■■■]</span><span>92%</span></div><div class="bar"><div class="bar-fill" style="width:92%"></div></div></div>
+<div class="skill-row"><div class="skill-top"><span>INCIDENT RESPONSE [■■■□□]</span><span>78%</span></div><div class="bar"><div class="bar-fill" style="width:78%"></div></div></div>
+</div>
+</div>
+</div>
+
+<div class="contact-bar">CONTACT → SECURE YOUR SYSTEMS NOW • 01101145178 • 24/7 AVAILABLE • <a href="https://wa.me/201101145178" style="color:#7aff9a;text-decoration:none">WHATSAPP: 01101145178</a></div>
+<div class="footer"><span>SYS: SECURE</span><span id="utc2">UTC 00:00:00 • 2024.12.19</span><span>VERSION 3.1.0 | ENCRYPTED</span></div>
+</div>
+
+<script>
+// background matrix
+const c=document.getElementById('bg'),x=c.getContext('2d');
+function rs(){c.width=innerWidth;c.height=innerHeight}rs();addEventListener('resize',rs);
+let cols=Math.floor(innerWidth/14),drops=Array(cols).fill(0);
+function draw(){x.fillStyle='rgba(2,10,6,0.08)';x.fillRect(0,0,c.width,c.height);x.fillStyle='#00ff88';x.font='12px monospace';drops.forEach((y,i)=>{const txt=Math.random()>0.5?'1':'0';x.globalAlpha=0.15+Math.random()*0.5;x.fillText(txt,i*14,y*14);if(y*14>c.height&&Math.random()>0.975)drops[i]=0;drops[i]++});x.globalAlpha=1}
+setInterval(draw,45);
+
+// binary art title KABOUS
+const kabousArt = [
+"  010 010101000 010   0110000 010   011   010  100 0110001 010101000 0101000 011  010 010101010",
+"  010 01011010011 010 100010100 0000 0001 010 0001 100101010 01000101101 0100001010 000  010 01010111011",
+"  010 011       010   011 010  01001 00011 011 001 010 0101 000010 00010 010 010 011 010 010 010",
+"  010 010110100  010  001 010 010101 000010 010 010 0010 010 010 0100001 010 010 011 010 01010110",
+"  000 010101010  000  01010100100 010 10 011 0100001 010 010101000 010 011 000 010 000 000 01010110",
+"  000   000     000  010100100  011 001 011 001 1011 010 010 001 000 010 001 000 010     000",
+"  000 010101001 010001010 010  010 010  010  000 010 010 010010011 0110100001 01001000010 0101010001",
+"  000 010101130 01011011001 011 010 010  010  110 010 010 010101000 0111000 010101100"
+];
+document.getElementById('binTitle').textContent=kabousArt.join("\n");
+
+// fancy name animation 乇ᦓꪶꪖꪑ   ᘓɹɹɹɠ᎗ɹ̣Ȋܭ
+const finalName = "乇ᦓꪶꪖꪑ   ᘓɹɹɹɠ᎗ɹ̣Ȋܭ";
+const el=document.getElementById('fancy');
+let spans=[];
+for(let i=0;i<finalName.length;i++){let s=document.createElement('span');el.appendChild(s);spans.push(s)}
+let tick=0;
+let iv=setInterval(()=>{
+if(tick<25){
+spans.forEach((s,i)=>{
+if(finalName[i]===' '){s.textContent='   ';return}
+s.textContent=Math.random()>0.5?'0':'1';
+s.className='bin';
+});
+tick++;
+}else{
+clearInterval(iv);
+spans.forEach((s,i)=>{s.textContent=finalName[i];s.className='real';});
+}
+},70);
+
+function upd(){let t=new Date().toUTCString().split(' ')[4];let d="2024.12.19";document.getElementById('utc').textContent=`UTC ${t} • ${d}`;document.getElementById('utc2').textContent=`UTC ${t} • ${d}`;}
+upd();setInterval(upd,1000);
+</script>
+</body>
+</html>
