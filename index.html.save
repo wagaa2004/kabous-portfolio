@@ -1,0 +1,57 @@
+
+<title>Islam Kabous | Developer</title>
+<style>
+body{margin:0;background:#020a02;color:#0f0;font-family:monospace;overflow-x:hidden}
+.matrix{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;opacity:0.15}
+.container{max-width:900px;margin:40px auto;padding:20px;border:1px solid #0f0;box-shadow:0 0 20px #0f0}
+h1{font-size:60px;text-align:center;text-shadow:0 0 10px #0f0;margin:0}
+h1 span{color:#fff}
+.type{ text-align:center; font-size:22px; color:#fff; margin:20px}
+.card{border:1px dashed #0f0;padding:15px;margin:15px 0}
+a{color:#0f0;text-decoration:none;border:1px solid #0f0;padding:10px 20px;display:inline-block}
+a:hover{background:#0f0;color:#000}
+</style>
+</head>
+<body>
+<canvas class="matrix" id="c"></canvas>
+<div class="container">
+<h1>Islam <span>Kabous</span></h1>
+<p class="type">0101 Full Stack Developer & Cyber Security 0101</p>
+
+<div class="card">
+<h3> > whoami</h3>
+<p>انا اسلام كابوس من عزبة البرج - دمياط. مبرمج متخصص في Python و JavaScript وامن المعلومات. بحب ابني واجهات Termux وادوات مفيدة.</p>
+</div>
+
+<div class="card">
+<h3> > skills --list</h3>
+<p>[ Python, JavaScript, HTML/CSS, Linux, Termux, Cyber Security, Bitcoin Tools ]</p>
+</div>
+
+<div class="card">
+<h3> > projects</h3>
+<p>1- Kabous Termux Interface v2.0<br>2- BTC Tracker Bot<br>3- Security Scanner</p>
+</div>
+
+<div class="card" style="text-align:center">
+<h3> > contact</h3>
+<p>جاهز للشغل؟ كلمني</p>
+<a href="https://wa.me/201000000000">WhatsApp</a>
+<a href="#">GitHub</a>
+</div>
+
+<p style="text-align:center;margin-top:30px">© 2026 Islam Kabous - 01010101</p>
+</div>
+
+<script>
+var c=document.getElementById("c"), ctx=c.getContext("2d");
+c.width=window.innerWidth; c.height=window.innerHeight;
+var chars="01KABOUS"; chars=chars.split(""); var cols=c.width/14; var drops=[];
+for(var x=0;x<cols;x++) drops[x]=1;
+function draw(){ctx.fillStyle="rgba(0,10,0,0.05)";ctx.fillRect(0,0,c.width,c.height);ctx.fillStyle="#0f0";ctx.font="14px monospace";
+for(var i=0;i<drops.length;i++){var t=chars[Math.floor(Math.random()*chars.length)];ctx.fillText(t,i*14,drops[i]*14);
+if(drops[i]*14>c.height&&Math.random()>0.975) drops[i]=0; drops[i]++;}} setInterval(draw,35);
+</script>
+</body>
+</html>
+
